@@ -52,17 +52,17 @@ function checkWin(player) {
     return false;
 }
 
-// function resetBoard() {
-//     board.forEach((row, i) => {
-//         row.forEach((j) => {
-//             board[i,j] = null
-//         });
-//     });
+function resetBoard() {
+    board.forEach((row, i) => {
+        row.forEach((j) => {
+            board[i,j] = null
+        });
+    });
 
-//     buttons.forEach((button) => {
-//         button.textContent = "";
-//     });
-//     currentPlayer = "X";
-// }
+    buttons.forEach((button) => {
+        button.textContent = "";
+    });
+    currentPlayer = "X";
+}
 
 

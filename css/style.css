@@ -40,10 +40,27 @@ svg {
     fill: white;
 }
 
-.winner-message {
+.winner-div {
     display: none;
+    text-align: center;
+}
+
+.winner-div p {
+    background-color: green;
+    color: white;
+    font-weight: 800;
+    font-size: 16px;
+    width: 50%;
+    padding: 5px;
+    margin: 10px auto;
 }
 
 .restart-btn {
-    display: none;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    margin: 0 auto;
+    font-weight: 800;
+    font-size: 16px;
+
 }

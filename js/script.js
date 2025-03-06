@@ -5,6 +5,8 @@ const board = [
 ]
 const buttons = document.querySelectorAll(".gameboard button");
 const winnerMessage = document.querySelector(".winner-message");
+const restartButton = document.querySelector(".restart-btn");
+const winnerDiv = document.querySelector(".winner-div");
 const letterX = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon1"><title>alpha-x</title><path d="M9,7L11,12L9,17H11L12,14.5L13,17H15L13,12L15,7H13L12,9.5L11,7H9Z" /></svg>`;
 const letterO = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon2"><title>circle-outline</title><path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" /></svg>`;
 
@@ -24,12 +26,18 @@ buttons.forEach((button) => {
         if (checkWin(currentPlayer)) {
             //alert(`${currentPlayer} Wins!`);
             winnerMessage.textContent = `${currentPlayer} wins!`;
-            winnerMessage.style.display = "block";
-            resetBoard();
+            winnerDiv.style.display = "block";
+            //restartButton.style.display = "block";
+            //resetBoard();
             return;
         }
         currentPlayer = currentPlayer === "X" ? "O" : "X";
     });
+});
+
+restartButton.addEventListener("click", () => {
+    resetBoard();
+    winnerDiv.style.display = "none";
 });
 
 function checkWin(player) {
